@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "r_s_invoice"
+			"table": "r_s_stores"
 		}
 	}
 }
