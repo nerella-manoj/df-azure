@@ -1,0 +1,29 @@
+{
+	"name": "ADF-Question-1",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"variables": {
+			"AllSheets": {
+				"type": "Array",
+				"defaultValue": [
+					"country",
+					"customer",
+					"day-1",
+					"day-2",
+					"day-3",
+					"day-4",
+					"day-5",
+					"product"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
