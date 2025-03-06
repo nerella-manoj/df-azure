@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Q1-pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -32,7 +32,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "iterate all csv files",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -96,7 +96,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"eachFile": {
-											"value": "@item()",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
@@ -108,7 +108,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tableName": {
-											"value": "@item()",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
@@ -117,6 +117,60 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "country csv copy",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_country_Q1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Country_Sql_Q1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
