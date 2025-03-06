@@ -1,0 +1,24 @@
+{
+	"name": "Rest-Api-master-pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute rest api pipeline",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "rest-api-pipeline",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
