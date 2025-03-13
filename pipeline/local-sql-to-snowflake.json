@@ -1,0 +1,24 @@
+{
+	"name": "local-sql-to-snowflake",
+	"properties": {
+		"activities": [
+			{
+				"name": "iterate-all-csv files",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"variables": {
+			"files": {
+				"type": "Array",
+				"defaultValue": [
+					"customers",
+					"products",
+					"transactions"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
