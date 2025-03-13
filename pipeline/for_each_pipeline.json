@@ -41,40 +41,8 @@
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "Excel1",
-									"type": "DatasetReference",
-									"parameters": {
-										"sheetname": {
-											"value": "@item()",
-											"type": "Expression"
-										}
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "DS_sink_sql",
-									"type": "DatasetReference",
-									"parameters": {
-										"tablename": {
-											"value": "@item()",
-											"type": "Expression"
-										}
-									}
-								}
-							]
+								"enableStaging": false
+							}
 						}
 					]
 				}

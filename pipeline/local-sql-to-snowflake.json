@@ -79,9 +79,9 @@
 			"files": {
 				"type": "Array",
 				"defaultValue": [
-					"customers",
-					"products",
-					"transactions"
+					"CUSTOMERS",
+					"PRODUCTS",
+					"TRANSACTION_DATA"
 				]
 			}
 		},
