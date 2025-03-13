@@ -40,9 +40,10 @@
 								"enableStaging": true,
 								"stagingSettings": {
 									"linkedServiceName": {
-										"referenceName": "LS_STAGING_SNOWFLAKE",
+										"referenceName": "LS_blob_storage",
 										"type": "LinkedServiceReference"
-									}
+									},
+									"path": "project"
 								}
 							},
 							"inputs": [
