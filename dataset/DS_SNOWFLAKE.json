@@ -5,12 +5,20 @@
 			"referenceName": "LS_snowflake_data",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"dest_tables": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "SnowflakeV2Table",
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "customers"
+			"table": {
+				"value": "@dataset().dest_tables",
+				"type": "Expression"
+			}
 		}
 	}
 }
