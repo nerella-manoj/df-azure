@@ -1,0 +1,16 @@
+{
+	"name": "DS_SNOWFLAKE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_snowflake_data",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customers"
+		}
+	}
+}
